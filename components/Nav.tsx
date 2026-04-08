@@ -7,12 +7,11 @@ import { ExternalLink, Menu, X } from 'lucide-react'
 const navItems = [
   { label: 'Skills', href: '#skills', external: false },
   { label: 'Projects', href: '#projects', external: false },
-  { label: 'Certifications', href: '#certifications', external: false },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/aditya', external: true },
-  { label: 'Resume', href: '/resume.pdf', external: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/aditya-ratnaparkhe/', external: true },
+  { label: 'Resume', href: '/CV_Aditya Ratnaparkhe.pdf', external: true },
 ]
 
-const sectionIds = ['hero', 'about', 'skills', 'projects', 'certifications']
+const sectionIds = ['hero', 'skills', 'projects']
 
 export default function Nav() {
   const [activeSection, setActiveSection] = useState('hero')

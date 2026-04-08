@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="220" fill="url(#bg)" rx="12"/>
+  <!-- Subtle border -->
+  <rect width="398" height="218" x="1" y="1" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="12"/>
+  <!-- Corner accents -->
+  <rect x="0" y="0" width="60" height="4" fill="#4285F4" rx="2"/>
+  <rect x="0" y="0" width="4" height="60" fill="#4285F4" rx="2"/>
+  <rect x="340" y="216" width="60" height="4" fill="#EA4335" rx="2"/>
+  <rect x="396" y="160" width="4" height="60" fill="#EA4335" rx="2"/>
+  <!-- Google G logo -->
+  <text x="50" y="110" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#4285F4">G</text>
+  <text x="50" y="110" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="url(#gcolor)">G</text>
+  <!-- Colored G segments -->
+  <path d="M50 65 Q62 55 78 58 L72 70 Q64 67 57 72 Z" fill="#EA4335"/>
+  <path d="M78 58 Q96 62 102 80 L88 82 Q85 70 72 70 Z" fill="#FBBC05"/>
+  <path d="M102 80 Q103 98 90 108 L82 98 Q92 92 88 82 Z" fill="#34A853"/>
+  <path d="M90 108 Q78 118 60 114 L62 102 Q74 106 82 98 Z" fill="#4285F4"/>
+  <path d="M60 114 Q44 108 42 92 L56 90 Q57 104 62 102 Z" fill="#4285F4"/>
+  <path d="M42 92 Q42 74 57 67 L62 78 Q52 83 56 90 Z" fill="#4285F4"/>
+  <!-- Text -->
+  <text x="130" y="88" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="0.5">Google</text>
+  <text x="130" y="110" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#E8EAED">Data Analytics</text>
+  <text x="130" y="130" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#9AA0A6">Professional Certificate</text>
+  <!-- Coursera badge area -->
+  <rect x="130" y="148" width="90" height="22" rx="11" fill="rgba(66,133,244,0.15)" stroke="rgba(66,133,244,0.3)" stroke-width="1"/>
+  <text x="175" y="163" font-family="Arial, sans-serif" font-size="10" fill="#4285F4" text-anchor="middle" font-weight="600">via Coursera</text>
+  <!-- Decorative dots -->
+  <circle cx="340" cy="50" r="3" fill="#FBBC05" opacity="0.6"/>
+  <circle cx="360" cy="70" r="2" fill="#34A853" opacity="0.5"/>
+  <circle cx="350" cy="90" r="4" fill="#EA4335" opacity="0.4"/>
+  <circle cx="370" cy="110" r="2" fill="#4285F4" opacity="0.5"/>
+  <!-- Bottom line -->
+  <rect x="30" y="195" width="340" height="1" fill="rgba(255,255,255,0.06)"/>
+  <text x="200" y="212" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle">May 2025 · Aditya Ratnaparkhe</text>
+</svg>

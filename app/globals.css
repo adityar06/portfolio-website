@@ -4,11 +4,11 @@
 
 /* ── CSS Custom Properties ─────────────────────────── */
 :root {
-  --background: #0A0A0F;
-  --text-primary: #F0F0F5;
-  --text-muted: #8B8B9E;
-  --accent: #6366F1;
-  --accent-glow: #818CF8;
+  --background: #0D0F1C;
+  --text-primary: #F5F5F7;
+  --text-muted:   #A1A1A6;
+  --accent:       #7D7AED;
+  --accent-glow:  #9D9BF4;
 }
 
 /* ── Base Reset ─────────────────────────────────────── */
@@ -17,18 +17,24 @@ html {
 }
 
 body {
-  background-color: var(--background);
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(94,92,230,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 10%, rgba(130,100,255,0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 72% 88%, rgba(50,213,172,0.08) 0%, transparent 50%),
+    var(--background);
+  background-attachment: fixed;
+  min-height: 100vh;
   color: var(--text-primary);
-  font-family: var(--font-geist), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ── Glass System ───────────────────────────────────── */
 .glass {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
 }
 
@@ -37,16 +43,16 @@ body {
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 0 24px rgba(99, 102, 241, 0.15);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(125, 122, 237, 0.40);
+  box-shadow: 0 0 20px rgba(125, 122, 237, 0.20);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 16px;
 }
 
@@ -97,12 +103,18 @@ body {
 }
 
 .gradient-text-shimmer {
-  background: linear-gradient(135deg, #ffffff 0%, #818CF8 40%, #ffffff 60%, #6366F1 100%);
+  background: linear-gradient(135deg, #F5F5F7 0%, #7D7AED 35%, #BF5AF2 65%, #32D5AC 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shimmer 6s ease infinite;
+}
+
+/* ── Liquid Glass Background Animation ─────────────────── */
+@keyframes moveBackground {
+  from { background-position: 0% 0%; }
+  to { background-position: 0% -1000%; }
 }
 
 /* ── Pulsing Dot ────────────────────────────────────── */

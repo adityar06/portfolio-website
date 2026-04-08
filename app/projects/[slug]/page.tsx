@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const project = getProjectBySlug(params.slug)
   if (!project) return {}
   return {
-    title: `${project.title} — Aditya Kumar`,
+    title: `${project.title} — Aditya Ratnaparkhe`,
     description: project.tagline,
   }
 }
@@ -36,35 +36,41 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <h1 className="font-syne text-4xl md:text-5xl font-bold mb-3">{project.title}</h1>
       <p className="text-text-muted text-xl mb-10 leading-relaxed">{project.tagline}</p>
 
-      {/* Tech stack tags */}
-      <div className="flex flex-wrap gap-2 mb-12">
-        {project.techStack.map((tech) => (
-          <span key={tech} className="glass rounded-full px-4 py-2 font-mono text-xs text-text-muted">
-            {tech}
-          </span>
+      {/* Demo video */}
+      {project.videoSrc ? (
+        <video
+          src={project.videoSrc}
+          controls
+          className="w-full rounded-2xl mb-12 shadow-glass"
+          style={{ background: '#000' }}
+        />
+      ) : null}
+
+      {/* Overview / The Problem */}
+      <div className="glass rounded-2xl p-8 mb-6">
+        <h2 className="font-syne text-2xl font-semibold mb-4">
+          {project.sectionTitles?.overview ?? 'Overview'}
+        </h2>
+        {project.overview.split('\n\n').map((para, i) => (
+          <p key={i} className="text-text-muted leading-relaxed mb-3 last:mb-0">{para}</p>
         ))}
       </div>
 
-      {/* Demo video placeholder */}
-      <div className="glass rounded-2xl aspect-video flex items-center justify-center mb-12 text-text-muted font-mono text-sm text-center px-6">
-        Demo video — add YouTube embed or &lt;video&gt; when available
+      {/* How It Was Built / How This Tool Solves It */}
+      <div className="glass rounded-2xl p-8 mb-6">
+        <h2 className="font-syne text-2xl font-semibold mb-4">
+          {project.sectionTitles?.howBuilt ?? 'How It Was Built'}
+        </h2>
+        {project.howBuilt.split('\n\n').map((para, i) => (
+          <p key={i} className="text-text-muted leading-relaxed mb-3 last:mb-0">{para}</p>
+        ))}
       </div>
 
-      {/* Overview */}
+      {/* Key Features / Key Outcomes */}
       <div className="glass rounded-2xl p-8 mb-6">
-        <h2 className="font-syne text-2xl font-semibold mb-4">Overview</h2>
-        <p className="text-text-muted leading-relaxed">{project.overview}</p>
-      </div>
-
-      {/* How It Was Built */}
-      <div className="glass rounded-2xl p-8 mb-6">
-        <h2 className="font-syne text-2xl font-semibold mb-4">How It Was Built</h2>
-        <p className="text-text-muted leading-relaxed">{project.howBuilt}</p>
-      </div>
-
-      {/* Key Features */}
-      <div className="glass rounded-2xl p-8 mb-6">
-        <h2 className="font-syne text-2xl font-semibold mb-4">Key Features</h2>
+        <h2 className="font-syne text-2xl font-semibold mb-4">
+          {project.sectionTitles?.keyFeatures ?? 'Key Features'}
+        </h2>
         <ul className="space-y-3">
           {project.keyFeatures.map((feature) => (
             <li key={feature} className="flex items-start gap-3 text-text-muted">

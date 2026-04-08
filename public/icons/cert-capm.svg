@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="220" fill="url(#bg2)" rx="12"/>
+  <rect width="398" height="218" x="1" y="1" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="12"/>
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="400" height="5" fill="#E05A1E" rx="2"/>
+  <!-- PMI Logo mark — stylised PM with arrows -->
+  <rect x="30" y="50" width="80" height="80" rx="8" fill="rgba(224,90,30,0.12)" stroke="rgba(224,90,30,0.3)" stroke-width="1.5"/>
+  <!-- P shape -->
+  <rect x="42" y="65" width="7" height="42" fill="#E05A1E"/>
+  <rect x="42" y="65" width="22" height="7" fill="#E05A1E"/>
+  <rect x="57" y="65" width="7" height="22" fill="#E05A1E"/>
+  <rect x="42" y="80" width="22" height="7" fill="#E05A1E"/>
+  <!-- M shape -->
+  <rect x="72" y="65" width="7" height="42" fill="#005FAD"/>
+  <rect x="72" y="65" width="22" height="7" fill="#005FAD"/>
+  <rect x="87" y="65" width="7" height="42" fill="#005FAD"/>
+  <rect x="79" y="72" width="8" height="7" fill="#005FAD"/>
+  <!-- CAPM text -->
+  <text x="130" y="82" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#ffffff" letter-spacing="2">CAPM</text>
+  <text x="130" y="102" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#9AA0A6" letter-spacing="1">CERTIFIED ASSOCIATE IN</text>
+  <text x="130" y="116" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#E05A1E" letter-spacing="1">PROJECT MANAGEMENT</text>
+  <!-- PMI label -->
+  <rect x="130" y="130" width="130" height="22" rx="4" fill="rgba(0,95,173,0.15)" stroke="rgba(0,95,173,0.3)" stroke-width="1"/>
+  <text x="195" y="145" font-family="Arial, sans-serif" font-size="10" fill="#5BA3D9" text-anchor="middle" font-weight="600">Project Management Institute</text>
+  <!-- Seal decoration -->
+  <circle cx="350" cy="100" r="38" fill="none" stroke="rgba(224,90,30,0.15)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="350" cy="100" r="30" fill="none" stroke="rgba(224,90,30,0.1)" stroke-width="1"/>
+  <text x="350" y="95" font-family="Arial, sans-serif" font-size="9" fill="rgba(224,90,30,0.5)" text-anchor="middle">PMI</text>
+  <text x="350" y="108" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.25)" text-anchor="middle">CERTIFIED</text>
+  <!-- Bottom -->
+  <rect x="30" y="195" width="340" height="1" fill="rgba(255,255,255,0.06)"/>
+  <text x="200" y="212" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle">April 2023 · Aditya Ratnaparkhe</text>
+</svg>
