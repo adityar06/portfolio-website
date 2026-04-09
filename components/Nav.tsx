@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Menu, X } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ExternalLink } from 'lucide-react'
 
 const navItems = [
   { label: 'Skills', href: '#skills', external: false },
@@ -15,7 +15,6 @@ const sectionIds = ['hero', 'skills', 'projects']
 
 export default function Nav() {
   const [activeSection, setActiveSection] = useState('hero')
-  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const observers: IntersectionObserver[] = []
@@ -75,43 +74,27 @@ export default function Nav() {
       </div>
 
       {/* Mobile */}
-      <div className="md:hidden w-full max-w-sm">
-        <div className="glass glass-strong rounded-full px-5 py-3 shadow-glass flex items-center justify-between">
-          <span className="font-syne font-semibold text-sm text-text-primary">Aditya Kumar</span>
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            className="text-text-muted hover:text-text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
-        </div>
-
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
-              className="glass glass-strong rounded-2xl mt-2 px-4 py-3 shadow-glass flex flex-col gap-1"
+      <div className="md:hidden">
+        <div className="glass glass-strong rounded-full px-4 py-3 shadow-glass flex items-center gap-4">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noopener noreferrer' : undefined}
+              className={`relative text-xs font-medium transition-colors duration-200 flex items-center gap-0.5 ${
+                item.external
+                  ? 'text-text-muted hover:text-text-primary'
+                  : activeSection === item.href.replace('#', '')
+                  ? 'text-accent-glow'
+                  : 'text-text-muted hover:text-text-primary'
+              }`}
             >
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noopener noreferrer' : undefined}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between px-3 py-2 rounded-xl text-sm text-text-muted hover:text-text-primary hover:bg-white/5 transition-colors"
-                >
-                  {item.label}
-                  {item.external && <ExternalLink size={12} />}
-                </a>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <span className="relative z-10">{item.label}</span>
+              {item.external && <ExternalLink size={10} className="relative z-10" />}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   )
