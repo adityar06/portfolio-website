@@ -118,6 +118,29 @@ export const projects: Project[] = [
     links: {},
     order: 4,
   },
+  {
+    slug: 'three-way-invoice-validator',
+    title: 'Three-Way Invoice Validator',
+    tagline: 'An AI powered invoice reconciliation tool that cross-references Purchase Orders, Goods Receipts, and Supplier Invoices in seconds, catching price deviations and quantity mismatches before payment is released.',
+    description: 'An AI powered invoice reconciliation tool that cross-references Purchase Orders, Goods Receipts, and Supplier Invoices in seconds, catching price deviations and quantity mismatches before payment is released.',
+    thumbnail: '/3 way invoice validator.jpg',
+    videoSrc: '/3 way invoice matching.mp4',
+    techStack: ['Claude API', 'Python', 'Streamlit'],
+    overview: `AP and procurement teams operating within a P2P cycle consistently face three reconciliation challenges that create financial exposure:\n\nManual cross-referencing of Purchase Orders, Goods Receipts, and Supplier Invoices is still the norm in most organizations, consuming hours of AP team time each month. When invoice volumes are high, quantity mismatches and price deviations go undetected before payment is released, resulting in overpayments that only surface at audit. There is no fast, standardized way to flag and communicate discrepancies to vendors, leaving resolution dependent on email threads and memory rather than documented exception reports.`,
+    howBuilt: `The Three-Way Invoice Match Validator automates the reconciliation step at the core of every P2P cycle. The user uploads three documents: a Purchase Order CSV, a Goods Receipt CSV, and a Supplier Invoice. The Claude API cross-references all three simultaneously, checking each line item for price variance, quantity variance, and absolute EUR deviation against configurable tolerance thresholds. Every line is classified as Approved, Query, or Reject, and the results are displayed in a color-coded exception table with a summary header. A What-If simulator allows users to test how adjusting tolerance thresholds would reclassify borderline lines before committing to a policy change. For any flagged discrepancy, the tool generates a pre-drafted vendor query template referencing the exact line, variance amount, and document numbers, reducing the time it takes to initiate a supplier dispute.`,
+    keyFeatures: [
+      'Reduces three-way reconciliation from a multi-hour manual task to a sub-minute automated validation',
+      'Catches price deviations, quantity mismatches, and EUR overcharges before payment is released',
+      'Eliminates unstructured email-based dispute handling with auto-generated, audit-ready vendor query templates',
+    ],
+    sectionTitles: {
+      overview: 'The Problem',
+      howBuilt: 'How This Tool Solves It',
+      keyFeatures: 'Key Outcomes',
+    },
+    links: {},
+    order: 5,
+  },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0d0d2b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a1f;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.18" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#a5b4fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#6366f1" stroke-width="0.3" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="627" fill="url(#bgGrad)"/>
+  <rect width="1200" height="627" fill="url(#grid)"/>
+  <rect width="1200" height="627" fill="url(#glowCenter)"/>
+
+  <!-- Decorative rings -->
+  <circle cx="600" cy="313" r="200" fill="none" stroke="#6366f1" stroke-width="0.6" stroke-opacity="0.12"/>
+  <circle cx="600" cy="313" r="270" fill="none" stroke="#6366f1" stroke-width="0.4" stroke-opacity="0.08"/>
+  <circle cx="600" cy="313" r="340" fill="none" stroke="#6366f1" stroke-width="0.3" stroke-opacity="0.05"/>
+
+  <!-- Portfolio label -->
+  <text x="600" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="100" font-weight="700" fill="url(#titleGrad)" text-anchor="middle" letter-spacing="-2">Portfolio</text>
+
+  <!-- Accent line -->
+  <line x1="440" y1="295" x2="760" y2="295" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="560" y1="295" x2="640" y2="295" stroke="#818cf8" stroke-width="2" stroke-opacity="0.9"/>
+  <circle cx="560" cy="295" r="3" fill="#818cf8" opacity="0.9"/>
+  <circle cx="640" cy="295" r="3" fill="#818cf8" opacity="0.9"/>
+
+  <!-- Tagline -->
+  <text x="600" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">Building AI-native tools for end-to-end supply chain</text>
+
+  <!-- Bottom border -->
+  <line x1="0" y1="624" x2="1200" y2="624" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.3"/>
+</svg>
