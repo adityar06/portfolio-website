@@ -141,6 +141,30 @@ export const projects: Project[] = [
     links: {},
     order: 5,
   },
+  {
+    slug: 'ai-demand-forecasting-inventory-analyzer',
+    title: 'AI Demand Forecasting and Inventory Health Analyzer',
+    tagline: 'An AI powered inventory health analyzer that converts a half-day planning exercise into a five-minute decision, automating EOQ calculation, stockout detection, and overstock quantification across every SKU from a single CSV upload.',
+    description: 'An AI powered inventory health analyzer that converts a half-day planning exercise into a five-minute decision, automating EOQ calculation, stockout detection, and overstock quantification across every SKU from a single CSV upload.',
+    thumbnail: '/AI Demand Forecasting & Inventory Health Analyzer.jpg',
+    videoSrc: '/AI Demand Forecasting & Inventory Health Analyzer.mp4',
+    techStack: ['Claude API', 'Python', 'Streamlit'],
+    overview: `Inventory planning teams consistently face three operational gaps that force reactive rather than proactive decision making:\n\nMost inventory reviews happen after the damage is done — stockouts are discovered when production lines halt or customer orders fail to ship, not days before when corrective action is still possible.\n\nIdentifying overstock positions requires manually cross-referencing stock levels, sales velocity, and lead time data across multiple spreadsheets, a process that consumes hours of a planner's week without producing a prioritized action list.\n\nWhen capital is tied up in excess inventory, there is no fast, structured way to quantify the daily financial cost of inaction or identify which positions should be liquidated first, leaving working capital optimization to intuition rather than data.`,
+    howBuilt: `The AI Inventory Health Analyzer automates the full inventory health audit from a single CSV upload. The user uploads their inventory data and configures key parameters including ordering cost, holding cost percentage, and health flag thresholds directly from the sidebar. The tool runs an EOQ and safety stock engine across every SKU, classifies each one as Critical, Watch, Healthy, or Overstock based on days-until-breach logic relative to supplier lead time, and layers in ABC tiering by annual consumption value alongside CV-based demand variability classification.\n\nThe AI then produces a full executive report covering priority actions, strategic risk flags, demand variability concerns, supplier concentration risk, and capital release opportunities with daily holding burn rates. A Reorder Plan table with urgency ranking and CSV export, combined with an AI-generated PO Draft Memo, means the output is not just an analysis but a procurement-ready action package.`,
+    keyFeatures: [
+      'Converts a half-day inventory planning exercise into a five-minute decision with a prioritized action list and draft purchase order ready to execute',
+      'Identifies stockout exposure days before breach using days-until-breach logic sorted by urgency across Critical and Watch SKUs',
+      'Quantifies the daily financial cost of overstock positions in $/day holding burn, enabling capital release prioritization by actual business impact rather than gut feel',
+      'Surfaces supplier concentration risk by lead time cohort and flags PO consolidation opportunities to reduce ordering costs',
+    ],
+    sectionTitles: {
+      overview: 'The Problem',
+      howBuilt: 'How This Tool Solves It',
+      keyFeatures: 'Key Outcomes',
+    },
+    links: {},
+    order: 6,
+  },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {
