@@ -4,7 +4,9 @@ import { ArrowLeft, ArrowRight, Code2, ExternalLink } from 'lucide-react'
 import { getProjectBySlug, getAdjacentProjects, projects } from '@/data/projects'
 
 export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }))
+  return projects
+    .filter((p) => p.category === 'ai-automation')
+    .map((p) => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -47,39 +49,45 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       ) : null}
 
       {/* Overview / The Problem */}
-      <div className="glass rounded-2xl p-8 mb-6">
-        <h2 className="font-syne text-2xl font-semibold mb-4">
-          {project.sectionTitles?.overview ?? 'Overview'}
-        </h2>
-        {project.overview.split('\n\n').map((para, i) => (
-          <p key={i} className="text-text-muted leading-relaxed mb-3 last:mb-0">{para}</p>
-        ))}
-      </div>
+      {project.overview && (
+        <div className="glass rounded-2xl p-8 mb-6">
+          <h2 className="font-syne text-2xl font-semibold mb-4">
+            {project.sectionTitles?.overview ?? 'Overview'}
+          </h2>
+          {project.overview.split('\n\n').map((para, i) => (
+            <p key={i} className="text-text-muted leading-relaxed mb-3 last:mb-0">{para}</p>
+          ))}
+        </div>
+      )}
 
       {/* How It Was Built / How This Tool Solves It */}
-      <div className="glass rounded-2xl p-8 mb-6">
-        <h2 className="font-syne text-2xl font-semibold mb-4">
-          {project.sectionTitles?.howBuilt ?? 'How It Was Built'}
-        </h2>
-        {project.howBuilt.split('\n\n').map((para, i) => (
-          <p key={i} className="text-text-muted leading-relaxed mb-3 last:mb-0">{para}</p>
-        ))}
-      </div>
+      {project.howBuilt && (
+        <div className="glass rounded-2xl p-8 mb-6">
+          <h2 className="font-syne text-2xl font-semibold mb-4">
+            {project.sectionTitles?.howBuilt ?? 'How It Was Built'}
+          </h2>
+          {project.howBuilt.split('\n\n').map((para, i) => (
+            <p key={i} className="text-text-muted leading-relaxed mb-3 last:mb-0">{para}</p>
+          ))}
+        </div>
+      )}
 
       {/* Key Features / Key Outcomes */}
-      <div className="glass rounded-2xl p-8 mb-6">
-        <h2 className="font-syne text-2xl font-semibold mb-4">
-          {project.sectionTitles?.keyFeatures ?? 'Key Features'}
-        </h2>
-        <ul className="space-y-3">
-          {project.keyFeatures.map((feature) => (
-            <li key={feature} className="flex items-start gap-3 text-text-muted">
-              <span className="text-accent mt-0.5 shrink-0">✦</span>
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {project.keyFeatures && project.keyFeatures.length > 0 && (
+        <div className="glass rounded-2xl p-8 mb-6">
+          <h2 className="font-syne text-2xl font-semibold mb-4">
+            {project.sectionTitles?.keyFeatures ?? 'Key Features'}
+          </h2>
+          <ul className="space-y-3">
+            {project.keyFeatures.map((feature) => (
+              <li key={feature} className="flex items-start gap-3 text-text-muted">
+                <span className="text-accent mt-0.5 shrink-0">✦</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* Links */}
       {(project.links.github || project.links.demo || project.links.linkedin) && (

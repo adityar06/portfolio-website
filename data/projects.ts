@@ -3,11 +3,12 @@ export interface Project {
   title: string
   tagline: string
   description: string
-  thumbnail: string
+  category: 'ai-automation' | 'sql'
+  thumbnail?: string
   techStack: string[]
-  overview: string
-  howBuilt: string
-  keyFeatures: string[]
+  overview?: string
+  howBuilt?: string
+  keyFeatures?: string[]
   videoSrc?: string
   sectionTitles?: {
     overview?: string
@@ -28,6 +29,7 @@ export const projects: Project[] = [
     title: 'Supplier Discovery AI Tool',
     tagline: 'An AI powered supplier discovery tool that replaces hours of manual research with a single input, returning 20 scored and ranked suppliers matched against your exact sourcing criteria.',
     description: 'An AI powered supplier discovery tool that replaces hours of manual research with a single input, returning 20 scored and ranked suppliers matched against your exact sourcing criteria.',
+    category: 'ai-automation',
     thumbnail: '/Supplier Discovery placeholder.jpg',
     techStack: ['Claude API', 'Tavily', 'Python', 'n8n'],
     overview: `Procurement teams consistently face three critical gaps in their supplier discovery process:\n\nMost shortlists are built on familiarity rather than market coverage, with the same supplier names appearing on every list regardless of whether better alternatives exist. Conducting a structured market search rarely fits into a compressed work week, leaving procurement managers unable to explore suppliers across different regions or price points. When an existing supplier raises a risk flag, there is no fast, structured way to identify qualified alternatives, forcing teams into reactive and often costly emergency sourcing.`,
@@ -52,6 +54,7 @@ export const projects: Project[] = [
     title: 'Supply Chain Risk Monitor AI Tool',
     tagline: 'An AI powered supplier risk monitoring tool that gives procurement teams full portfolio visibility in a single dashboard, replacing reactive crisis management with proactive early warning signals across financial, operational, geopolitical, and compliance risk dimensions.',
     description: 'An AI powered supplier risk monitoring tool that gives procurement teams full portfolio visibility in a single dashboard, replacing reactive crisis management with proactive early warning signals across financial, operational, geopolitical, and compliance risk dimensions.',
+    category: 'ai-automation',
     thumbnail: '/Supply Chain Risk Monitor placeholder.jpg',
     techStack: ['Python', 'Claude API', 'Streamlit'],
     overview: `Most companies only discover a supplier is in trouble when shipments stop arriving. By that point the damage is already done, production halts, customer commitments are missed, and emergency sourcing begins at a significant cost premium. The underlying monitoring process that should prevent this remains largely manual across most procurement teams, with risk signals scattered across news feeds, ERP exports, financial databases, and supplier scorecards. Three specific gaps make this painful in practice:\n\nReactive visibility means procurement teams have no early warning system for supplier deterioration, so financial instability, delivery performance decline, and compliance gaps only surface after they have already caused disruption\n\nNo composite risk picture exists across most organizations, with risk data spread across multiple disconnected sources and no single view showing which suppliers in the portfolio need immediate attention and which are stable\n\nCoverage imbalance leaves mid-tier and tail-spend suppliers carrying significant geopolitical exposure or single-source risk completely unmonitored while intensive scrutiny goes only to the top suppliers by spend`,
@@ -76,6 +79,7 @@ export const projects: Project[] = [
     title: 'AI Negotiation Prep Brief',
     tagline: 'An AI powered negotiation preparation tool that replaces four to twelve hours of manual supplier research with a single structured input, generating a comprehensive brief covering supplier financials, market intelligence, BATNA positioning, and tailored talking points in minutes.',
     description: 'An AI powered negotiation preparation tool that replaces four to twelve hours of manual supplier research with a single structured input, generating a comprehensive brief covering supplier financials, market intelligence, BATNA positioning, and tailored talking points in minutes.',
+    category: 'ai-automation',
     thumbnail: '/AI Negotiation Prep Brief placeholder.jpg',
     techStack: ['Claude API', 'Python', 'n8n'],
     overview: `Before any supplier negotiation, a procurement professional needs to build a complete picture of the supplier, the market, and their own leverage position. This means pulling information from multiple disconnected sources including financial databases, news feeds, LinkedIn, industry reports, and internal contract files, and manually synthesizing it into a coherent strategy document. For a single supplier, this process takes anywhere from four to twelve hours. Three specific gaps make this painful in practice:\n\nTime compression leaves procurement teams underprepared because negotiation dates are often confirmed late, giving buyers no realistic window to conduct thorough research alongside their regular workload\n\nUneven preparation quality means a team managing forty active suppliers can only conduct deep research for the top five by spend, with everyone else receiving a recycled brief from the previous year and significant value being left on the table in mid-tier negotiations\n\nWeak BATNA positioning undermines negotiation leverage because most buyers know alternatives exist in theory but cannot name them specifically, and suppliers sense this ambiguity and price accordingly`,
@@ -100,6 +104,7 @@ export const projects: Project[] = [
     title: 'Supplier Quotation Intelligence Tool',
     tagline: 'An AI powered procurement tool that ingests multiple supplier quotations, applies weighted evaluation criteria, and generates a supplier scorecard, risk analysis, and executive recommendation memo in minutes, replacing days of manual comparison with a single automated workflow.',
     description: 'An AI powered procurement tool that ingests multiple supplier quotations, applies weighted evaluation criteria, and generates a supplier scorecard, risk analysis, and executive recommendation memo in minutes, replacing days of manual comparison with a single automated workflow.',
+    category: 'ai-automation',
     thumbnail: '/Supplier Contract Intelligence placeholder.jpg',
     techStack: ['Claude API', 'Python', 'n8n'],
     overview: `Manual supplier quotation comparison is one of the most time-consuming and error-prone steps in the procurement workflow. When a sourcing event returns responses from multiple suppliers, a category manager or procurement professional must manually map every cost component, lead time, payment term, technical specification, and risk factor across each quotation into a comparison matrix, typically built from scratch in Excel. For complex categories with multiple suppliers responding, this process consumes days of strategic time that procurement teams simply cannot afford to lose.\n\nThree specific gaps make this process consistently painful across procurement teams of all sizes:\n\nManual data extraction forces procurement professionals to read through unstructured quotation documents line by line, transferring data into spreadsheets with no standardization across supplier responses, creating significant room for error and omission\n\nSubjective supplier selection means final recommendations often rely on gut feeling or familiarity rather than objective, weighted evaluation across all commercially relevant criteria including price, lead time, quality certifications, and risk factors\n\nDelayed decision making caused by the time-intensive comparison process pushes back award decisions, extends sourcing cycles, and reduces the procurement team's capacity to focus on strategic supplier relationship management`,
@@ -123,6 +128,7 @@ export const projects: Project[] = [
     title: 'Three-Way Invoice Validator',
     tagline: 'An AI powered invoice reconciliation tool that cross-references Purchase Orders, Goods Receipts, and Supplier Invoices in seconds, catching price deviations and quantity mismatches before payment is released.',
     description: 'An AI powered invoice reconciliation tool that cross-references Purchase Orders, Goods Receipts, and Supplier Invoices in seconds, catching price deviations and quantity mismatches before payment is released.',
+    category: 'ai-automation',
     thumbnail: '/3 way invoice validator.jpg',
     videoSrc: '/3 way invoice matching.mp4',
     techStack: ['Claude API', 'Python', 'Streamlit'],
@@ -146,6 +152,7 @@ export const projects: Project[] = [
     title: 'AI Demand Forecasting and Inventory Health Analyzer',
     tagline: 'An AI powered inventory health analyzer that converts a half-day planning exercise into a five-minute decision, automating EOQ calculation, stockout detection, and overstock quantification across every SKU from a single CSV upload.',
     description: 'An AI powered inventory health analyzer that converts a half-day planning exercise into a five-minute decision, automating EOQ calculation, stockout detection, and overstock quantification across every SKU from a single CSV upload.',
+    category: 'ai-automation',
     thumbnail: '/AI Demand Forecasting & Inventory Health.jpg',
     videoSrc: '/AI Demand Forecasting & Inventory Health.mp4',
     techStack: ['Claude API', 'Python', 'Streamlit'],
@@ -165,6 +172,30 @@ export const projects: Project[] = [
     links: {},
     order: 6,
   },
+  {
+    slug: 'sql-market-expansion-analysis',
+    title: 'Market Expansion Analysis',
+    tagline: 'A SQL-based analysis identifying high-potential markets for business expansion by examining revenue concentration, customer density, and untapped regional growth opportunities.',
+    description: 'A SQL-based analysis identifying high-potential markets for business expansion by examining revenue concentration, customer density, and untapped regional growth opportunities across geographic segments.',
+    category: 'sql',
+    techStack: ['SQL', 'PostgreSQL'],
+    links: {
+      github: 'https://github.com/adityar06/expansion_analysis',
+    },
+    order: 1,
+  },
+  {
+    slug: 'sql-retail-sales-analysis',
+    title: 'Retail Sales Analysis',
+    tagline: 'A SQL project analyzing retail sales data to surface revenue trends, top-performing product categories, and customer purchasing patterns across time periods and store segments.',
+    description: 'A SQL project analyzing retail sales data to surface revenue trends, top-performing product categories, and customer purchasing patterns across time periods and store segments.',
+    category: 'sql',
+    techStack: ['SQL', 'PostgreSQL'],
+    links: {
+      github: 'https://github.com/adityar06/sql_retail_sales_p1',
+    },
+    order: 2,
+  },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {
@@ -175,7 +206,9 @@ export function getAdjacentProjects(slug: string): {
   prev: Project | null
   next: Project | null
 } {
-  const sorted = [...projects].sort((a, b) => a.order - b.order)
+  const sorted = [...projects]
+    .filter((p) => p.category === 'ai-automation')
+    .sort((a, b) => a.order - b.order)
   const index = sorted.findIndex((p) => p.slug === slug)
   return {
     prev: index > 0 ? sorted[index - 1] : null,
