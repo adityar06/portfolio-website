@@ -12,10 +12,18 @@ const TABS: { id: Category; label: string }[] = [
   { id: 'sql', label: 'SQL' },
 ]
 
+const INITIAL_COUNT = 4
+
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState<Category>('ai-automation')
+  const [showAll, setShowAll] = useState(false)
 
-  const visibleProjects = projects.filter((p) => p.category === activeCategory)
+  const categoryProjects = projects.filter((p) => p.category === activeCategory)
+  const visibleProjects =
+    activeCategory === 'ai-automation' && !showAll
+      ? categoryProjects.slice(0, INITIAL_COUNT)
+      : categoryProjects
+  const hiddenCount = categoryProjects.length - INITIAL_COUNT
 
   return (
     <section id="projects" className="max-w-5xl mx-auto px-6 md:px-12 py-16">
@@ -47,7 +55,7 @@ export default function Projects() {
           {TABS.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveCategory(tab.id)}
+              onClick={() => { setActiveCategory(tab.id); setShowAll(false) }}
               className="relative px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200"
               style={{ color: activeCategory === tab.id ? '#F5F5F7' : '#A1A1A6' }}
             >
@@ -91,6 +99,28 @@ export default function Projects() {
           ))}
         </motion.div>
       </AnimatePresence>
+
+      {activeCategory === 'ai-automation' && hiddenCount > 0 && (
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => setShowAll((v) => !v)}
+            className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium text-text-muted hover:text-text-primary transition-colors duration-200"
+            style={{
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
+            }}
+          >
+            {showAll ? 'Show less' : `View ${hiddenCount} more project${hiddenCount > 1 ? 's' : ''}`}
+            <motion.span
+              animate={{ rotate: showAll ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="inline-block"
+            >
+              ↓
+            </motion.span>
+          </button>
+        </div>
+      )}
     </section>
   )
 }
