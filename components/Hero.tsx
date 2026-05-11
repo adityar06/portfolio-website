@@ -97,7 +97,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-text-muted text-lg md:text-xl font-geist leading-relaxed"
           >
-            {'Bridging the gap between supply chain operations and '}
+            {'Bridging the gap between supply chain operations with '}
             <span
               className="relative inline-block overflow-hidden"
               style={{ height: '1.4em', width: '270px', verticalAlign: 'bottom' }}
